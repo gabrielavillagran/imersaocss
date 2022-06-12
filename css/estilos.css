@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("../img/fundo.jpg");
+  background-image: url("../img/fundo2.png");
   background-size: auto 100vh;
-  font-family: Arial;
+  font-family: 'IBM Plex Mono', monospace;
   height: 100vh;
   font-size: 12px;
 }
@@ -21,9 +21,11 @@ body {
 /* breakpoint */
 @media (min-width: 600px) {
   body {
+    background-attachment: fixed;
+    background-size: cover;
     font-size: 18px;
-   }
- }
+  }
+}
 
  /* breakpoint */
 @media (min-width: 1200px) {
@@ -44,6 +46,7 @@ header {
   position: fixed;
   width:100vw;
   top: 0;
+  z-index: 1
 }
 
 .menu ul {
@@ -57,11 +60,18 @@ header {
 
 .menu a {
   display: block;
-  padding: 10px;
+  padding: 10px 20px;
+  transition: background-color 1s, color 1s;
+}
+
+.menu a:active,
+.menu a:hover {
+ background-color: rgb(251, 147, 242);
+ color: black;
 }
 
 a {
-  color: rgb(40, 0, 141);
+  color: black;
   text-decoration: none;
 }
 
@@ -69,21 +79,255 @@ a:hover {
   text-decoration: underline;
 }
 
+
+.titulo {
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+  animation:0.5s ease 2s animacaoTitulo forwards;
+}
+
+
+@keyframes animacaoTitulo {
+  from {
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+  }
+  to {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  }
+}
+
+
 .site-subtitle,
 .site-title {
-  color: whitesmoke;
+  color: black;
   text-align: center;
 }
 
 .site-title {
   font-size: 3em;
+  font-family: 'Kalam', cursive;
 }
 
 .site-subtitle {
   font-style: italic;
+  font-family: 'IBM Plex Mono', monospace;
+  line-height: 1.8em;
+}
+
+.sobre,
+.contato,
+.portfolio {
+  padding: 2.5em;
+  min-width: 100vh;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+}
+.sobre h2,
+.contato h2,
+.portfolio h2 {
+  font-family: 'IBM Plex Mono', monospace;
+  color: black;
+  margin-bottom: 1.5em;
+  font-size: 2em;
+}
+
+.sobre p {
+  color: black;
+  text-indent: 1.4em;
+  margin-bottom: 1.4em;
+  text-align: justify;
+}
+
+.sobre a {
+  color: black;
+  text-decoration: underline;
+}
+
+.sobre a:hover {
+  color: darkgreen;
+  text-decoration: none;
+  font-weight:bold;
+}
+
+.sobre .avatar {
+  float:right;
+  margin-left: 2em;
+}
+
+.portfolio .grid {
+  display: grid;
+  gap: 2em;
+}
+
+@media (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;
+  }
+}
+
+@media (min-width: 880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 8em - 48px);
+  }
+}
+
+.sobre p {
+  text-indent: 1.8em;
+  margin-bottom: 1.4em;
+  text-align: justify;
+}
+
+.contato,
+.portfolio {
+  padding: 2em;
+  min-height: 100vh;
+}
+.contato h2,
+.portfolio h2 {
+  color: black;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 2em;
+  margin-bottom: 1.3em;
+}
+
+
+.sobre .avatar {
+  float:right;
+  margin-left: 2em;
+}
+
+.sobre .avatar img {
+  height: 240px;
+}
+
+@media (min-width: 600px) {
+  .sobre .avatar {
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+    float: right;
+  }
+}
+
+.portfolio .grid {
+  display: grid;
+  gap: 2em;
+}
+
+@media (min-width:560px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(2,240px);
+  }
+}
+
+@media (min-width:880px) {
+  .portfolio .grid {
+    align-content: center;
+    grid-template-columns: repeat(3,240px);
+    justify-content: center;
+    height: calc(100vh - 5.5em - 48px - 8em);
+  }
+}
+
+
+.flip-card {
+  height: 180px;
+  perspective: 1000px;
+}
+
+.flip-card:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card-front, 
+.card-back {
+  backface-visibility: hidden;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, .7);
+  height: 180px;
+  width: 100%;
+  transform: rotateY(180deg);
 }
 
 .img-portfolio {
   height: 180px;
-  width: 180px;
+  width: 100%;
+  object-fit: cover;
+  object-position: left bottom;
+  border-radius: 3%;
+  transition: transform 500ms;
 }
+
+/*
+.img-portfolio:hover {
+  transform: scale(1.2);
+}
+*/
+.card {
+  background-color: blue;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  background-color: rgb(255, 255, 255);
+  height:100px;
+  width: 100%;
+}
+
+
+.card-front
+.card-back {
+  backface-visibility: hidden;
+  left:0;
+  position: absolute;
+  top:0;
+  transform: rotateY(180deg);
+}
+
+
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  color: rgba(0, 0, 0, 0.853);
+  font-size: 4em;
+  transition: text-shadow 1s whitesmoke;
+}
+
+.contato a:active,
+.contato a:hover {
+  text-decoration: none;
+  text-shadow: 0px 5px 20px rgba(245, 245, 245, 0.975);
+}
+
