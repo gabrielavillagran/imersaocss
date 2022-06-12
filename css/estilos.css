@@ -1,0 +1,34 @@
+body {
+    background-image: url(https://img.freepik.com/vetores-gratis/fundo-ondulado-escuro-com-cores-degrade_23-2148399446.jpg?t=st=1654998197~exp=1654998797~hmac=37fa942e9683e4cff226cf6f908ace8b4617ccb46024822c2a58779172621a1c&w=740);
+    background-size: auto 100vh;
+    font-family:Arial;
+    height: 100vh;
+  }
+  .menu {
+      background-color: white;
+  }
+  .menu ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  .menu li{
+    list-style: none;
+  }
+  a {
+    color: rgb(40, 0, 141);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .site-subtitle,
+  .site-title {
+    color: whitesmoke;
+    text-align: center;
+  }
+  .site-subtitle {
+    font-style: italic;
+  }
+  
+  
