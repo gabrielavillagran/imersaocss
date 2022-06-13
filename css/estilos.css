@@ -66,8 +66,8 @@ header {
 
 .menu a:active,
 .menu a:hover {
-  background-color: teal;
-  color: white;
+  background-color: pink;
+  color: black;
 }
 
 a {
