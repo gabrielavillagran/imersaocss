@@ -13,8 +13,8 @@ body {
 
 /* se a tela tiver pelo menos 400px vai carregar estes estilos */
 @media (min-width: 400px) {
- body {
-   font-size: 14px;
+  body {
+    font-size: 14px;
   }
 }
 
@@ -27,13 +27,13 @@ body {
   }
 }
 
- /* breakpoint */
+/* breakpoint */
 @media (min-width: 1200px) {
   body {
+   
     font-size: 20px;
-   }
- }
-
+  }
+}
 header {
   height: 100vh;
   display: flex;
@@ -44,9 +44,9 @@ header {
 .menu {
   background-color: white;
   position: fixed;
-  width:100vw;
+  width: 100vw;
   top: 0;
-  z-index: 1
+  z-index: 1;
 }
 
 .menu ul {
@@ -55,7 +55,7 @@ header {
 }
 
 .menu li {
-  list-style: none;
+ list-style: none; 
 }
 
 .menu a {
@@ -66,12 +66,12 @@ header {
 
 .menu a:active,
 .menu a:hover {
- background-color: rgb(251, 147, 242);
- color: black;
+  background-color: teal;
+  color: white;
 }
 
 a {
-  color: black;
+  color: teal;
   text-decoration: none;
 }
 
@@ -79,34 +79,31 @@ a:hover {
   text-decoration: underline;
 }
 
-
 .titulo {
   transform: scale(0.2) translateY(50vh);
   opacity: 0;
-  animation:0.5s ease 2s animacaoTitulo forwards;
+  animation: 1s ease 500ms animacaoTitulo forwards;
 }
-
 
 @keyframes animacaoTitulo {
   from {
-  transform: scale(0.2) translateY(50vh);
-  opacity: 0;
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
   }
   to {
-  transform: scale(1) translateY(0);
-  opacity: 1;
+    transform: scale(1) translateY(0);
+    opacity: 1;
   }
 }
 
-
-.site-subtitle,
+.site-subtitle, 
 .site-title {
   color: black;
   text-align: center;
 }
 
 .site-title {
-  font-size: 3em;
+  font-size: 4em;
   font-family: 'Kalam', cursive;
 }
 
@@ -120,7 +117,7 @@ a:hover {
 .contato,
 .portfolio {
   padding: 2.5em;
-  min-width: 100vh;
+  min-height: 100vh;
 }
 
 @media (min-width: 1200px) {
@@ -130,6 +127,7 @@ a:hover {
     max-width: 1200px;
   }
 }
+
 .sobre h2,
 .contato h2,
 .portfolio h2 {
@@ -147,7 +145,7 @@ a:hover {
 }
 
 .sobre a {
-  color: black;
+  color: white;
   text-decoration: underline;
 }
 
@@ -158,8 +156,17 @@ a:hover {
 }
 
 .sobre .avatar {
+  margin:0;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
   float:right;
-  margin-left: 2em;
+  margin-left: 3.5em;
+}
+
+@media (min-width: 600px) {
+  .sobre .avatar {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    float: right;
+  }
 }
 
 .portfolio .grid {
@@ -182,62 +189,6 @@ a:hover {
   }
 }
 
-.sobre p {
-  text-indent: 1.8em;
-  margin-bottom: 1.4em;
-  text-align: justify;
-}
-
-.contato,
-.portfolio {
-  padding: 2em;
-  min-height: 100vh;
-}
-.contato h2,
-.portfolio h2 {
-  color: black;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 2em;
-  margin-bottom: 1.3em;
-}
-
-.sobre .avatar {
-  float:right;
-  margin-left: 2em;
-}
-
-.sobre .avatar img {
-  height: 240px;
-}
-
-@media (min-width: 600px) {
-  .sobre .avatar {
-    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-    float: right;
-  }
-}
-
-.portfolio .grid {
-  display: grid;
-  gap: 2em;
-}
-
-@media (min-width:560px) {
-  .portfolio .grid {
-    grid-template-columns: repeat(2,240px);
-  }
-}
-
-@media (min-width:880px) {
-  .portfolio .grid {
-    align-content: center;
-    grid-template-columns: repeat(3,240px);
-    justify-content: center;
-    height: calc(100vh - 5.5em - 48px - 8em);
-  }
-}
-
-
 .flip-card {
   height: 180px;
   perspective: 1000px;
@@ -250,7 +201,7 @@ a:hover {
 .card {
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 1s;
+  transition: transform 3s;
 }
 
 .card-front, 
@@ -266,26 +217,9 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, .7);
   height: 180px;
   width: 100%;
-  transform: rotateY(180deg);
-}
-
-
-
-/*
-.img-portfolio:hover {
-  transform: scale(1.2);
-}
-*/
-.card {
-  background-color: blue;
-  position: relative;
-  transform-style: preserve-3d;
-}
-
-.card:hover {
   transform: rotateY(180deg);
 }
 
@@ -298,7 +232,110 @@ a:hover {
   width: 100%;
   object-fit: cover;
   object-position: left bottom;
-  border-radius: 3%;
+  transition: transform 500ms;
+}
+
+/* .img-portfolio:hover {
+  transform: scale(1.2) rotate(-2deg);
+} */
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  color: whitesmoke;
+  font-size: 4em;
+  transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover  {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px rgba(255,255,255,.5);
+}
+
+
+
+
+
+
+
+
+.sobre .avatar img {
+  height: 240px;
+}
+
+
+@media (min-width: 600px) {
+  .sobre .avatar {
+    float: right;
+  }
+}
+
+.portfolio .grid {
+  display: grid;
+  gap: 2em;
+}
+
+@media (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;
+  }
+}
+
+@media (min-width: 880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 8em - 48px);
+  }
+}
+
+.flip-card {
+  height: 180px;
+  perspective: 1000px;
+}
+
+.flip-card:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 3s;
+}
+
+.card-front, 
+.card-back {
+  backface-visibility: hidden;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, .7);
+  height: 180px;
+  width: 100%;
+  transform: rotateY(180deg);
+}
+
+.portfolio figure {
+  text-align: center;
+}
+
+.img-portfolio {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  object-position: left bottom;
   transition: transform 500ms;
 }
 
@@ -307,14 +344,13 @@ a:hover {
 }
 
 .contato a {
-  color: rgba(0, 0, 0, 0.853);
+  color: black;
   font-size: 4em;
-  transition: text-shadow 1s whitesmoke;
+  transition: text-shadow 1s;
 }
 
 .contato a:active,
-.contato a:hover {
+.contato a:hover  {
   text-decoration: none;
-  text-shadow: 0px 5px 20px whitesmoke;
+  text-shadow: 0px 0px 10px rgba(255,255,255,.5);
 }
-
