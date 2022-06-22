@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("../img/fundo2.png");
+  background-image: url("../img/fundo4.png");
   background-size: auto 100vh;
   font-family: 'IBM Plex Mono', monospace;
   height: 100vh;
@@ -14,11 +14,21 @@ body {
 /* se a tela tiver pelo menos 400px vai carregar estes estilos */
 @media (min-width: 400px) {
   body {
+    background-attachment: fixed;
+    background-size: cover;
     font-size: 14px;
   }
 }
 
 /* breakpoint */
+@media (min-width: 360px) {
+  body {
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 14px;
+  }
+}
+
 @media (min-width: 600px) {
   body {
     background-attachment: fixed;
@@ -67,11 +77,11 @@ header {
 .menu a:active,
 .menu a:hover {
   background-color: pink;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 a {
-  color: teal;
+  color: black;
   text-decoration: none;
 }
 
@@ -117,7 +127,7 @@ a:hover {
 .contato,
 .portfolio {
   padding: 2.5em;
-  min-height: 100vh;
+  min-height: 40vh;
 }
 
 @media (min-width: 1200px) {
@@ -141,6 +151,7 @@ a:hover {
   color: black;
   text-indent: 1.4em;
   margin-bottom: 1.4em;
+  margin-top: 1.4em;
   text-align: justify;
 }
 
@@ -156,10 +167,9 @@ a:hover {
 }
 
 .sobre .avatar {
-  margin:0;
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-  float:right;
-  margin-left: 3.5em;
+  float:left;
+  margin-left: 3em;
 }
 
 @media (min-width: 600px) {
@@ -185,9 +195,13 @@ a:hover {
     grid-template-columns: repeat(3, 260px);
     align-content: center;
     justify-content: center;
-    height: calc(100vh - 8em - 48px);
+    height: 40vh;
+   
   }
 }
+
+
+
 
 .flip-card {
   height: 180px;
@@ -289,9 +303,11 @@ a:hover {
     grid-template-columns: repeat(3, 260px);
     align-content: center;
     justify-content: center;
-    height: calc(100vh - 8em - 48px);
+    height: 40vh;
   }
 }
+
+/*height: calc(100vh - 8em - 48px);*/
 
 .flip-card {
   height: 180px;
