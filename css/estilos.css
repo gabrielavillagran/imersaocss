@@ -127,7 +127,7 @@ a:hover {
 .contato,
 .portfolio {
   padding: 2.5em;
-  min-height: 40vh;
+  min-height: 60vh;
 }
 
 @media (min-width: 1200px) {
@@ -195,7 +195,7 @@ a:hover {
     grid-template-columns: repeat(3, 260px);
     align-content: center;
     justify-content: center;
-    height: 40vh;
+    height: 100vh;
    
   }
 }
@@ -303,7 +303,7 @@ a:hover {
     grid-template-columns: repeat(3, 260px);
     align-content: center;
     justify-content: center;
-    height: 60vh;
+    height: 85vh;
   }
 }
 
