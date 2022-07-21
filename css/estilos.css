@@ -76,7 +76,7 @@ header {
 
 .menu a:active,
 .menu a:hover {
-  background-color: pink;
+  background-color: rgba(186, 112, 235, 0.883);
   color: rgb(0, 0, 0);
 }
 
@@ -303,7 +303,7 @@ a:hover {
     grid-template-columns: repeat(3, 260px);
     align-content: center;
     justify-content: center;
-    height: 40vh;
+    height: 60vh;
   }
 }
 
