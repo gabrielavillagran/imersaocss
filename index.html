@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Importando a fonte-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="./src/css/reset.css">
+
+        <link rel="stylesheet" href="./src/css/style.css">
+
+        <!-- "font-family: 'VT323', monospace;"  para o CSS-->
+
+        <title>Portfólio Gabriela Villagran</title>
+    </head>
+    <body>
+    <!-- criando o cartão verde -->
+        <main class='card'>
+            <div class='minhas_informacoes'>
+                <img src="./src/img/circulo.png" alt="foto-perfil">
+                <h1 class='nome'>Gabriela Villagran</h1>
+                <h2 class='cargo'>Cientista de dados Jr.</h2>
+            </div>
+
+            <div class='conteudo'>
+                <ul class='abas'>
+                    <li class='aba selecionado' id = 'sobre-mim'>
+                        <img src="./src/img/sobre.gif" alt="icone sobre mim">
+                    </li>
+                    <li class='aba' id ='minhas-redes'>
+                        <img src="./src/img/urso.gif" alt="icone redes sociais">
+                    </li>
+                </ul>
+            </div>
+
+            <div class='informacoes-abas'>
+                <div class='informacao selecionado' id="informacao-sobre-mim">
+                    <h3 class='sub-titulo'>Sobre</h3>
+
+                    <div class='descricao'>
+                        <p>Olá, meu nome é Gabriela Villagran, sou graduanda de Engenharia Civil (último semestre) e atualmente estou estudando programação em Python com ênfase em ciência de dados.</p>
+                        <br>
+                        <p>Tive a oportunidade de conhecer essa área através do programa Desenvolve, oferecido pelo Grupo Boticário, onde fui selecionada para o programa e estou tendo a oportunidade de realizar meus estudos na plataforma Alura.</p>
+                        </p>
+                        <br>
+                        <!-- o span vai estilizar as linguagens-->
+                        <p>Na engenharia civil desenvolvi habilidades como, trabalhar em equipe e desenvolvimento analítico e lógico para tomada de decisões.</p>
+                        <br> 
+                        <p>Sou empática, gosto de trabalhar em grupo e essas habilidades somadas a meu interesse na área de dados me torna uma candidata para a vaga de cientista de dados jr. ou atuar em áreas correlatas.</p>
+                        <br>
+                        <p><span>Meus interesses são: Data Science, Python, HTML, CSS, JavaScript.</span></p>
+                        <br>
+                        <p>Gosto de tecnologia, resolver problemas e estou procurando oportunidades para trabalhar na área.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class='informacao' id ='informacao-minhas-redes'>
+            <!-- irmã da aba sobre -->
+                <h3 class="sub-titulo" >Minhas redes</h3>
+
+                <ul class="redes-sociais">
+                    <li>
+                        <a href="https://drive.google.com/file/d/1Nok-6M6UeU3D2Jk9cZRrvrxY44O_2S2o/view?usp=sharing" target="_blank" class="curriculo">Currículo</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.linkedin.com/in/gabriela-villagran-469a9122b/" target="'_blank" class='linkedin'>Linkedin</a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/gabrielavillagran" target='_blank' class='github'>GitHub</a>
+                    </li>
+                 </ul>
+                </div>
+
+              </div>
+             </div>
+        </main>
+
+        <script src="./src/js/index.js"></script>
+    </body> 
+</html>
