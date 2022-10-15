@@ -1,0 +1,195 @@
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #e228d8 #070d12;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #070d12;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #e228d9e8;
+    border-radius: 5px;
+    border: 3px solid #070d12;
+  }
+body{
+    background-image:  url(../img/fundo-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    font-family: 'VT323', monospace;
+    color: #f3f3f3;
+    font-size: 18px;
+
+    /* ele alinha horizontalmente*/ 
+    display: flex;
+    justify-content: center;
+
+    /* definindo a altura*/
+    min-height: 100vh;
+
+    /* ele alinha verticalmente*/ 
+    align-items: center;
+
+    padding:30px;
+}
+
+
+.card{
+    background-color: #070b12e7;
+    width: 370px;
+    border: 2px solid #e126d9;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+}
+
+
+.card .minhas_informacoes{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    /* alinha horinzontalmente por causa
+    do flex direction columns*/
+    align-items: center;
+    /* da um espaçamento nos filhos*/
+    gap: 10px;
+}
+
+.card .minhas_informacoes img{
+    width: 100px;
+    border-radius: 600px;
+    border: 3px solid #02d08f;
+}
+
+.card .minhas_informacoes .nome{
+    font-size: 26px;
+    border-right: 2px solid #02d08f;
+    padding-right: 2px;
+    max-width: 0; /* uma de cada vez*/
+    white-space: nowrap; /* sem quebra de linha*/
+    overflow: hidden; /* esconde o que nao ta dentro da tag */
+    animation: pisca normal infinite .8s, escrever normal 5s steps(55) both;/* tira o max-hidth de 0 */
+}
+
+@keyframes pisca {
+    100%{
+        border-right-color: transparent;
+    }
+}
+
+@keyframes escrever{
+    100%{
+        max-width: 100%;
+    }
+}
+
+.card .minhas_informacoes .cargo{
+    font-size: 20px;
+    color: #b8bbc5;
+    padding-bottom: 5px;
+}
+
+.cartao .conteudo{
+    margin-top: 15px;
+}
+
+.conteudo .abas{
+    display: flex;
+}
+
+.conteudo .abas .aba{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding:10px 0;
+    cursor:pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.card .abas img{
+    width:32px;
+}
+
+.card .abas .aba.selecionado{
+    background-color: #262626;
+}
+
+.card .informacoes-abas{
+    text-align: justify;
+    background-color: #262626;
+}
+
+/* hover = passar por cima */
+.card .abas:hover{
+    background-color: #414141;
+}
+
+.informacoes-abas .informacao{
+    min-height: 260px;
+    padding: 15px;
+    display:none;
+}
+
+.informacoes-abas .informacao.selecionado{
+    display: block;
+}
+
+.informacoes-abas .sub-titulo{
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.informacoes-abas .descricao{
+    font-size:  20px;
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.informacoes-abas .descricao span{
+    color: #02d08f;
+}
+
+.redes-sociais{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.redes-sociais li a{
+    background-color:red;
+    width:250px;
+    display: block;
+    color: #f3f3f3;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    transition: opacity 0.25s ease-in-out;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.redes-sociais .curriculo{
+    background-color: #06c185;
+}
+
+.redes-sociais .linkedin{
+    background-color: #1d87bd;
+}
+.redes-sociais .github{
+    background-color: #545454;
+}
+.redes-sociais li a:hover{
+    opacity: 0.7;
+}
