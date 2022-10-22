@@ -44,13 +44,11 @@ body{
 
 .card{
     position: absolute;
-    box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.38);
-    border-radius: 2px;
-    background-color: #070b12;
+    background-color: #070b12f4;
     width: 320px;
-    justify-content: center;
     align-items: center;
 }
+
 
 .card::before, .card::after{
     content:'';
@@ -92,8 +90,10 @@ body{
 .card .minhas_informacoes img{
     width: 100px;
     border-radius: 600px;
-    border: 3px solid #02d08f;
+    border: 2.5px solid #02d08f;
+    position: relative;
 }
+
 
 .card .minhas_informacoes .nome{
     font-size: 26px;
@@ -220,8 +220,13 @@ body{
     background-color: #545454;
 }
 
-.redes-sociais .youtube{
+.redes-sociais .projetosDataScience{
     background-color: rgb(255,56,56);
+
+}
+
+.redes-sociais .projetosPowerBI{
+    background-color: rgb(224, 175, 0);
 
 }
 .redes-sociais li a:hover{
